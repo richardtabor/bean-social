@@ -1,0 +1,87 @@
+/* THEME CONTENT OVERRIDES */
+.entry-content ul.bean_social_icons { margin: 0; }
+ul.bean_social_icons { line-height: 0; }
+
+/* ICON MAIN */
+ul.bean_social_icons li.bean_social_icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  list-style: none;
+  margin: 0px 5px 5px 0px;
+  background-image: url(../images/bean-social.png); 
+  -webkit-transition: all .1s;
+     -moz-transition: all .1s;
+  	  -ms-transition: all .1s; 	   
+  	   -o-transition: all .1s;
+}
+ul.bean_social_icons li.bean_social_icon:hover { 
+	opacity: .4;
+}
+ 
+/* ICON POSITIONING */  
+ul.bean_social_icons li.bean_social_icon.bean_social-twitter {
+background-position: 0px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-facebook {
+background-position: -32px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-dribbble {
+background-position: -64px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-mail {
+background-position: -96px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-instagram {
+background-position: -128px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-pinterest {
+background-position: -160px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-vimeo {
+background-position: -192px 0px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-evernote {
+background-position: 0px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-myspace {
+background-position: -32px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-linkedin {
+background-position: -64px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-forrest {
+background-position: -96px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-paypal {
+background-position: -128px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-googleplus {
+background-position: -160px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-spotify {
+background-position: -192px -32px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-behance {
+background-position: 0px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-rss {
+background-position: -32px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-dropbox {
+background-position: -64px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-soundcloud {
+background-position: -96px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-rdio {
+background-position: -128px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-deviantart {
+background-position: -160px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-skype {
+background-position: -192px -64px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-soundhound {
+background-position: 0px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-zerply {
+background-position: -32px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-picasa {
+background-position: -64px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-500px {
+background-position: -96px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-youtube {
+background-position: -128px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-steam {
+background-position: -160px -96px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-reddit {
+background-position: -192px -96px; }
+
+/* RETINA CSS */  
+@media all and (-webkit-min-device-pixel-ratio: 1.5),
+(min-resolution: 192dpi) {	
+	ul.bean_social_icons li.bean_social_icon {
+		background-image: url(../images/bean-social@2x.png); 
+		background-size: 224px 128px;
+	}
+}
