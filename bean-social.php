@@ -88,8 +88,10 @@ class Bean_Social {
      * Add a page under Appearance menu in the admin dashboard
      * Hooks a few necessary functions
      */
-    function admin_menu() {
-        $this->screen_id = add_menu_page( 'Bean Social', 'Bean Social', 'manage_options', 'bean_social', array(&$this, 'admin_page') );
+    function admin_menu() {	
+    	add_options_page(
+    		__('Bean Social', 'bean'), __('Bean Social', 'bean'), 'manage_options', 'bean_social', array(&$this, 'admin_page')
+    	);
     }
 
     /**
@@ -126,7 +128,7 @@ class Bean_Social {
             <?php screen_icon('options-general'); ?>
             <h2><?php echo esc_html__('Bean Social Plugin', 'bean'); ?></h2>
 			
-			<div class="content-wrap" style="margin: 20px 8px; width: 70%;">
+			<div class="content-wrap" style="margin: 20px 5px; width: 70%;">
 				<h4>Initial Setup.</h4>
 	            <p>Create and add social media icons throughout your WordPress install using our Bean Social widget and associated shortcodes. Note that only the URLs you enter will display their relative icons. If you like this plugin, consider checking out our other <a href="http://themebeans.com/plugins/?ref=bean_social" target="blank"><b>Free Plugins</b></a>, as well as our <a href="http://themebeans.com/themes/?ref=bean_social" target="blank"><b>Premium WordPress Themes</b></a>. Cheers!</p><br />
 	            
