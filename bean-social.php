@@ -3,7 +3,7 @@
  * Plugin Name: Bean Social
  * Plugin URI: http://themebeans.com/plugin/bean-social/?ref=plugin_bean_social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.2
+ * Version: 1.2.1
  * Author: ThemeBeans
  * Author URI: http://themebeans.com/?ref=plugin_bean_social
  *  
@@ -43,7 +43,7 @@ $license_key = trim( get_option( 'edd_sample_license_key' ) );
 
 //CURRENT BUILD
 $edd_updater = new EDD_SL_Plugin_Updater( BEANSOCIAL_EDD_TB_URL, __FILE__, array( 
-		'version' 	=> '1.2',
+		'version' 	=> '1.2.1',
 		'license' 	=> $license_key,
 		'item_name' => BEANSOCIAL_EDD_TB_NAME,
 		'author' 	=> 'ThemeBeans'
