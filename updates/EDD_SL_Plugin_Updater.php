@@ -1,6 +1,16 @@
 <?php
+/**
+ * This file controls plugin updater API calls.
+ *
+ *  
+ * @package Bean Plugins
+ * @subpackage BeanSocial
+ * @author ThemeBeans
+ * @since BeanSocial 1.2
+ */
+ 
 // uncomment this line for testing
-set_site_transient( 'update_plugins', null );
+//set_site_transient( 'update_plugins', null );
 
 /**
  * Allows plugins to use their own update API.

@@ -1,14 +1,24 @@
 <?php
+/**
+ * This file sets up the license updater.
+ *
+ *  
+ * @package Bean Plugins
+ * @subpackage BeanSocial
+ * @author ThemeBeans
+ * @since BeanSocial 1.2
+ */
+ 
 /*===================================================================*/
 /* REGISTER OPTION
 /*===================================================================*/
-function edd_sample_register_option() 
+function edd_beansocial_register_option() 
 {
-	register_setting('edd_sample_license', 'edd_sample_license_key', 'edd_sanitize_license' );
+	register_setting('edd_sample_license', 'edd_sample_license_key', 'edd_bean_social_sanitize_license' );
 }
-add_action('admin_init', 'edd_sample_register_option');
+add_action('admin_init', 'edd_beansocial_register_option');
 
-function edd_sanitize_license( $new ) 
+function edd_bean_social_sanitize_license( $new ) 
 {
 	$old = get_option( 'edd_sample_license_key' );
 	if( $old && $old != $new ) {
@@ -23,7 +33,7 @@ function edd_sanitize_license( $new )
 /*===================================================================*/
 /* ACTIVATE LICENSE KEY
 /*===================================================================*/
-function edd_bean_activate_license() 
+function edd_beansocial_activate_license() 
 {
 	//LISTEN FOR ACTIVATE BUTTON
 	if( isset( $_POST['edd_license_activate'] ) ) {
@@ -54,7 +64,7 @@ function edd_bean_activate_license()
 		update_option( 'edd_sample_license_status', $license_data->license );
 	}
 }
-add_action('admin_init', 'edd_bean_activate_license');
+add_action('admin_init', 'edd_beansocial_activate_license');
 
 
 
@@ -62,7 +72,7 @@ add_action('admin_init', 'edd_bean_activate_license');
 /*===================================================================*/
 /* DEACTIVATE LICENSE KEY
 /*===================================================================*/
-function edd_bean_deactivate_license() 
+function edd_beansocial_deactivate_license() 
 {
 	//LISTEN FOR ACTIVATION CLICK
 	if( isset( $_POST['edd_license_deactivate'] ) ) 
@@ -96,4 +106,4 @@ function edd_bean_deactivate_license()
 			delete_option( 'edd_sample_license_status' );
 	}
 }
-add_action('admin_init', 'edd_bean_deactivate_license');
+add_action('admin_init', 'edd_beansocial_deactivate_license');

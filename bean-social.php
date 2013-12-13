@@ -14,9 +14,6 @@
  * @since BeanSocial 1.0
  */
 
-
-
-
 /*===================================================================*/
 /* MAKE SURE WE DO NOT EXPOSE ANY INFO IF CALLED DIRECTLY
 /*===================================================================*/
@@ -104,7 +101,11 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 		    "youtube" => "YouTube",
 		    "steam" => "Steam",
 		    "reddit" => "Reddit",
-		    "foodspotting" => "Foodspotting"
+		    "foodspotting" => "Foodspotting",
+		    "wordpress" => "WordPress",
+		    "medium" => "Medium",
+		    "vine" => "Vine",
+		    "github" => "Github"
 		    );
 	
 	    private $screen_id = null;
@@ -252,24 +253,21 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 				<p>Create and add social media icons throughout your WordPress install using our Bean Social widget and associated shortcodes. Note that only the URLs you enter will display their relative icons. If you like this plugin, consider checking out our other <a href="http://themebeans.com/plugins/?ref=bean_social" target="blank">Free Plugins</a>, as well as our <a href="http://themebeans.com/themes/?ref=bean_social" target="blank">Premium WordPress Themes</a>. Cheers!</p><br />
 				
 				<h4 style="font-size: 15px; font-weight: 600; color: #222; margin-bottom: 10px;"><?php _e('Activate License'); ?></h4>
-				<p>Enter the license code <code style="padding: 1px 5px 2px; background-color: #FFF; border-radius: 2px; font-weight: bold; font-family: 'Open Sans',sans-serif;">BEANPLUGIN</code> to activate the plugin updater. You'll be able to update this plugin from your Plugins Dashboard when updates are available.</p>
+				<p>Enter the license key <code style="padding: 1px 5px 2px; background-color: #FFF; border-radius: 2px; font-weight: bold; font-family: 'Open Sans',sans-serif;">BEANPLUGIN</code>, hit Save, then Activate, to turn on the plugin updater. You'll then be able to update this plugin from your Plugins Dashboard when future updates are available.</p>
 	             
 	            	<form method="post" action="options.php">
 		            	<?php settings_fields('edd_sample_license'); ?>
 		            	<input id="edd_sample_license_key" name="edd_sample_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-						
-						<?php if( false !== $license ) { ?>
 							<?php if( $status !== false && $status == 'valid' ) { ?>
 								<?php wp_nonce_field( 'edd_sample_nonce', 'edd_sample_nonce' ); ?>
 								<input type="submit" class="button-secondary" name="edd_license_deactivate" style="outline: none!important;" value="<?php _e('Deactivate License'); ?>"/>
 								<span style="color: #7AD03A;"><?php _e('&nbsp;&nbsp;Good to go!'); ?></span>
 							<?php } else {
 								wp_nonce_field( 'edd_sample_nonce', 'edd_sample_nonce' ); ?>
+								<input type="submit" name="submit" id="submit" class="button button-secondary" value="Save License Key">
 								<input type="submit" class="button-secondary" name="edd_license_activate" style="outline: none!important;" value="<?php _e('Activate License'); ?>"/>
 								<span style="color: #DD3D36;"><?php _e('&nbsp;&nbsp;Inactive'); ?></span>
 							<?php } ?>
-						<?php } ?>
-						<?php //submit_button(); ?>
 	            	</form>
 	            	
 	     			<br />

@@ -1,13 +1,9 @@
-DEC 13 2013 - Version 1.2.1
-<ul>
-<li>Added Foodspotting, Github & WordPress icons.</li>
-<li>Let us know via <a href="https://twitter.com/themebeans">Twitter</a> what other icons you'd like to see.</li>
-</ul>
-
-DEC 11 2013 - Version 1.2
+DEC 12 2013 - Version 1.2
 <ul>
 <li>Added a Plugin Updater. Nice!</li>
 <li>Moved Bean Social into the Settings Dashboard link.</li>
+<li>Added Foodspotting, Medium, Vine, Github & WordPress icons.</li>
+<li>Let us know via <a href="https://twitter.com/themebeans">Twitter</a> what other icons you'd like to see.</li>
 </ul>
 
 NOV 1 2013 - Version 1.1
