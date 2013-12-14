@@ -17,5 +17,5 @@ NOV 1 2013 - Version 1.1
 	
 OCT 7 2013 - Version 1.0
 <ul>
-<li>First release</li>
+<li>Initial release</li>
 </ul>
