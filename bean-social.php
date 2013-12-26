@@ -35,9 +35,9 @@ define( 'BEANSOCIAL_EDD_TB_NAME', 'Bean Social' );
 //INCLUDE UPDATER
 if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
 	include( dirname( __FILE__ ) . '/updates/EDD_SL_Plugin_Updater.php' );
-	include( dirname( __FILE__ ) . '/updates/EDD_SL_Setup.php' );
 }
 
+include( dirname( __FILE__ ) . '/updates/EDD_SL_Setup.php' );
 //LICENSE KEY
 $license_key = trim( get_option( 'edd_sample_license_key' ) );
 
