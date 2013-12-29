@@ -1,18 +1,18 @@
-DEC 12 2013 - Version 1.2.1
-<ul>
-<li>Added Foodspotting, Medium, Vine, Github & WordPress icons.</li>
-<li>Let us know via <a href="https://twitter.com/themebeans">Twitter</a> what other icons you'd like to see.</li>
-</ul>
-
-DEC 10 2013 - Version 1.2
+DEC 30 2013 - Version 1.3
 <ul>
 <li>Added a Plugin Updater. Nice!</li>
-<li>Moved Bean Social into the Settings Dashboard link.</li>
+<li>Moved Bean Social into the Settings dashboard link</li>
+</ul>
+
+DEC 12 2013 - Version 1.2.1
+<ul>
+<li>Added Foodspotting, Medium, Vine, Github & WordPress icons</li>
+<li>Let us know via <a href="https://twitter.com/themebeans">Twitter</a> what other icons you'd like to see</li>
 </ul>
 
 NOV 1 2013 - Version 1.1
 <ul>
-<li>Added YouTube, Reddit & Steam Icons.</li>
+<li>Added YouTube, Reddit & Steam icons</li>
 </ul>	
 	
 OCT 7 2013 - Version 1.0

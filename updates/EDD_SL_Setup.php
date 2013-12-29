@@ -6,7 +6,7 @@
  * @package Bean Plugins
  * @subpackage BeanSocial
  * @author ThemeBeans
- * @since BeanSocial 1.2
+ * @since BeanSocial 1.3
  */
  
 /*===================================================================*/
@@ -14,15 +14,15 @@
 /*===================================================================*/
 function edd_beansocial_register_option() 
 {
-	register_setting('edd_sample_license', 'edd_sample_license_key', 'edd_bean_social_sanitize_license' );
+	register_setting('edd_beansocial_license', 'edd_beansocial_license_key', 'edd_bean_social_sanitize_license' );
 }
 add_action('admin_init', 'edd_beansocial_register_option');
 
 function edd_bean_social_sanitize_license( $new ) 
 {
-	$old = get_option( 'edd_sample_license_key' );
+	$old = get_option( 'edd_beansocial_license_key' );
 	if( $old && $old != $new ) {
-		delete_option( 'edd_sample_license_status' );
+		delete_option( 'edd_beansocial_license_status' );
 	}
 	return $new;
 }
@@ -36,14 +36,14 @@ function edd_bean_social_sanitize_license( $new )
 function edd_beansocial_activate_license() 
 {
 	//LISTEN FOR ACTIVATE BUTTON
-	if( isset( $_POST['edd_license_activate'] ) ) {
+	if( isset( $_POST['edd_beansocial_license_activate'] ) ) {
 
 		//SECUIRTY CHECK
-	 	if( ! check_admin_referer( 'edd_sample_nonce', 'edd_sample_nonce' ) ) 	
+	 	if( ! check_admin_referer( 'edd_beansocial_nonce', 'edd_beansocial_nonce' ) ) 	
 			return; //GET OUT IF WE DIDNT CLICK ACTIVATE
 
 		//RETRIEVE LICENSE FROM DATABASE
-		$license = trim( get_option( 'edd_sample_license_key' ) );
+		$license = trim( get_option( 'edd_beansocial_license_key' ) );
 			
 		//DATA TO SEND
 		$api_params = array( 
@@ -61,7 +61,7 @@ function edd_beansocial_activate_license()
 
 		//DECODE LICENSE DATA
 		$license_data = json_decode( wp_remote_retrieve_body( $response ) );
-		update_option( 'edd_sample_license_status', $license_data->license );
+		update_option( 'edd_beansocial_license_status', $license_data->license );
 	}
 }
 add_action('admin_init', 'edd_beansocial_activate_license');
@@ -75,14 +75,14 @@ add_action('admin_init', 'edd_beansocial_activate_license');
 function edd_beansocial_deactivate_license() 
 {
 	//LISTEN FOR ACTIVATION CLICK
-	if( isset( $_POST['edd_license_deactivate'] ) ) 
+	if( isset( $_POST['edd_beansocial_license_deactivate'] ) ) 
 	{
 		//SECURITY CHECK
-	 	if( ! check_admin_referer( 'edd_sample_nonce', 'edd_sample_nonce' ) ) 	
+	 	if( ! check_admin_referer( 'edd_beansocial_nonce', 'edd_beansocial_nonce' ) ) 	
 			return; // get out if we didn't click the Activate button
 
 		//RETRIEVE LICENSE FROM DATABASE
-		$license = trim( get_option( 'edd_sample_license_key' ) );
+		$license = trim( get_option( 'edd_beansocial_license_key' ) );
 
 		//DATA TO SEND
 		$api_params = array( 
@@ -103,7 +103,7 @@ function edd_beansocial_deactivate_license()
 		
 		//DECODE LICENSE DATA
 		if( $license_data->license == 'deactivated' )
-			delete_option( 'edd_sample_license_status' );
+			delete_option( 'edd_beansocial_license_status' );
 	}
 }
 add_action('admin_init', 'edd_beansocial_deactivate_license');

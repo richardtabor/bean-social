@@ -6,10 +6,10 @@
  * @package Bean Plugins
  * @subpackage BeanSocial
  * @author ThemeBeans
- * @since BeanSocial 1.2
+ * @since BeanSocial 1.3
  */
  
-// uncomment this line for testing
+//UNCOMMENT THIS LINE FOR TESTING
 //set_site_transient( 'update_plugins', null );
 
 /**
