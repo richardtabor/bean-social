@@ -92,6 +92,6 @@ background-position: -128px -128px; }
 (min-resolution: 192dpi) {	
 	ul.bean_social_icons li.bean_social_icon {
 		background-image: url(../images/bean-social@2x.png); 
-		background-size: 224px 128px;
+		background-size: 224px 160px;
 	}
 }
