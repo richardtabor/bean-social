@@ -56,18 +56,6 @@ $edd_updater = new EDD_SL_Plugin_Updater( BEANSOCIAL_EDD_TB_URL, __FILE__, array
 
 
 /*===================================================================*/
-/* INCLUDES AND ADDS
-/*===================================================================*/
-//INCLUDE SHORTCODE
-require_once('bean-social-widget.php');
-
-//ADD SHORTCODE
-add_shortcode( 'bean_social', array( 'Bean_Social', 'render_shortcodes' ) );
-
-
-
-
-/*===================================================================*/
 /* PLUGIN CLASS
 /*===================================================================*/
 if ( ! class_exists( 'Bean_Social' ) ) :
@@ -309,4 +297,14 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 new Bean_Social;
 
 endif;
+
+/*===================================================================*/
+/* INCLUDES AND ADDS
+/*===================================================================*/
+//INCLUDE SHORTCODE
+require_once('bean-social-widget.php');
+
+//ADD SHORTCODE
+add_shortcode( 'bean_social', array( 'Bean_Social', 'render_shortcodes' ) );
+
 ?>
