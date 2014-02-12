@@ -3,7 +3,7 @@
  * Plugin Name: Bean Social
  * Plugin URI: http://themebeans.com/plugin/bean-social/?ref=plugin_bean_social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.3.1
+ * Version: 1.4
  * Author: Rich Tabor / ThemeBeans
  * Author URI: http://themebeans.com/?ref=plugin_bean_social
  *
@@ -27,34 +27,70 @@ if ( !function_exists( 'add_action' ) ) {
 
 
 /*===================================================================*/
-/* PLUGIN UPDATER
+/*
+/* PLUGIN UPDATER FUNCTIONALITY
+/*
 /*===================================================================*/
-//CONSTANTS
-define( 'BEANSOCIAL_EDD_TB_URL', 'http://themebeans.com' );
-define( 'BEANSOCIAL_EDD_TB_NAME', 'Bean Social' );
+define( 'EDD_BEANSOCIAL_TB_URL', 'http://themebeans.com' );
+define( 'EDD_BEANSOCIAL_NAME', 'Bean Social' );
 
-//INCLUDE UPDATER
-if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) {
+//LOAD UPDATER CLASS
+if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) 
+{
 	include( dirname( __FILE__ ) . '/updates/EDD_SL_Plugin_Updater.php' );
 }
-
-include( dirname( __FILE__ ) . '/updates/EDD_SL_Setup.php' );
-
-//LICENSE KEY
-$license_key = trim( get_option( 'edd_beansocial_license_key' ) );
-
-//CURRENT BUILD
-$edd_updater = new EDD_SL_Plugin_Updater( BEANSOCIAL_EDD_TB_URL, __FILE__, array(
-		'version' 	=> '1.3.1',
-		'license' 	=> $license_key,
-		'item_name' => BEANSOCIAL_EDD_TB_NAME,
-		'author' 	=> 'ThemeBeans'
-	)
-);
+//INCLUDE UPDATER SETUP
+include( dirname( __FILE__ ) . '/updates/EDD_SL_Activation.php' );
 
 
+/*===================================================================*/
+/* UPDATER SETUP
+/*===================================================================*/
+function beansocial_license_setup() 
+{
+	add_option( 'edd_beansocial_activate_license', 'BEANSOCIAL' );
+	add_option( 'edd_beansocial_license_status' );
+}
+add_action( 'init', 'beansocial_license_setup' );
+
+function edd_beansocial_plugin_updater() 
+{
+	//RETRIEVE LICENSE KEY
+	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
+
+	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
+			'version' 	=> '1.0',
+			'license' 	=> $license_key,
+			'item_name' => EDD_BEANSOCIAL_NAME,
+			'author' 	=> 'Rich Tabor / ThemeBeans'
+		)
+	);
+}
+add_action( 'admin_init', 'edd_beansocial_plugin_updater' );
 
 
+/*===================================================================*/
+/* DEACTIVATION HOOK - REMOVE OPTION
+/*===================================================================*/
+function beansocial_deactivate() 
+{
+	delete_option( 'edd_beansocial_activate_license' );
+	delete_option( 'edd_beansocial_license_status' );
+}
+register_deactivation_hook( __FILE__, 'beansocial_deactivate' );
+
+
+
+
+
+
+
+
+/*===================================================================*/
+/*
+/* BEGIN BEAN SOCIAL PLUGIN
+/*
+/*===================================================================*/
 /*===================================================================*/
 /* PLUGIN CLASS
 /*===================================================================*/
@@ -241,27 +277,6 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 	        <div class="wrap">
 				<h2><?php echo esc_html__('Bean Social Plugin', 'bean'); ?></h2>
 				<p>Create and add social media icons throughout your WordPress install using our Bean Social widget and associated shortcodes. Note that only the URLs you enter will display their relative icons. If you like this plugin, consider checking out our other <a href="http://themebeans.com/plugins/?ref=bean_social" target="blank">Free Plugins</a>, as well as our <a href="http://themebeans.com/themes/?ref=bean_social" target="blank">Premium WordPress Themes</a>. Cheers!</p><br />
-
-				<h4 style="font-size: 15px; font-weight: 600; color: #222; margin-bottom: 10px;"><?php _e('Activate License'); ?></h4>
-				<p>Enter the license key <code style="padding: 1px 5px 2px; background-color: #FFF; border-radius: 2px; font-weight: bold; font-family: 'Open Sans',sans-serif;">BEANSOCIAL</code>, hit Save, then Activate, to turn on the plugin updater. You'll then be able to update this plugin from your Plugins Dashboard when future updates are available.</p>
-
-	            	<form method="post" action="options.php">
-	            		<?php settings_fields('edd_beansocial_license'); ?>
-	            		<input id="edd_beansocial_license_key" name="edd_beansocial_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-	            			<?php if( $status !== false && $status == 'valid' ) { ?>
-	            				<?php wp_nonce_field( 'edd_beansocial_nonce', 'edd_beansocial_nonce' ); ?>
-	            				<input type="submit" class="button-secondary" name="edd_beansocial_license_deactivate" style="outline: none!important;" value="<?php _e('Deactivate License'); ?>"/>
-	            				<span style="color: #7AD03A;"><?php _e('&nbsp;&nbsp;Good to go!'); ?></span>
-	            			<?php } else {
-	            				wp_nonce_field( 'edd_beansocial_nonce', 'edd_beansocial_nonce' ); ?>
-	            				<input type="submit" name="submit" id="submit" class="button button-secondary" value="Save License Key">
-	            				<input type="submit" class="button-secondary" name="edd_beansocial_license_activate" style="outline: none!important;" value="<?php _e('Activate License'); ?>"/>
-	            				<span style="color: #DD3D36;"><?php _e('&nbsp;&nbsp;Inactive'); ?></span>
-	            			<?php } ?>
-	            	</form>
-
-	     			<br />
-		         	<br />
 
 		            <h4 style="font-size: 15px; font-weight: 600; color: #222; margin-bottom: 10px;">Social Shortcodes</h4>
 		            <p>Use the following shortcodes to implement the social icons throughout your install. The first pulls all the available icons, in which you have entered links. The second is an example of a shortcode that filters specific icons to display.</p>
