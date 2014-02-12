@@ -59,7 +59,7 @@ function edd_beansocial_plugin_updater()
 	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
 
 	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
-			'version' 	=> '1.0',
+			'version' 	=> '1.4',
 			'license' 	=> $license_key,
 			'item_name' => EDD_BEANSOCIAL_NAME,
 			'author' 	=> 'Rich Tabor / ThemeBeans'
