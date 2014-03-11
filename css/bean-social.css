@@ -1,97 +1,107 @@
 /* THEME CONTENT OVERRIDES */
 .entry-content ul.bean_social_icons { margin: 0; }
-ul.bean_social_icons { line-height: 0; }
+ul.bean_social_icons { line-height: 0; text-align: left; }
 
 /* ICON MAIN */
-ul.bean_social_icons li.bean_social_icon {
+ul.bean_social_icons li.bean_social_icon  {
+  display: inline-block;
+  margin: 0px 5px 5px 0px;
+}
+
+ul.bean_social_icons li.bean_social_icon a {
   display: inline-block;
   width: 32px;
   height: 32px;
   list-style: none;
-  margin: 0px 5px 5px 0px;
   background-image: url(../images/bean-social.png); 
   -webkit-transition: all .1s;
      -moz-transition: all .1s;
   	  -ms-transition: all .1s; 	   
   	   -o-transition: all .1s;
 }
-ul.bean_social_icons li.bean_social_icon:hover { 
+
+ul.bean_social_icons li.bean_social_icon a:hover { 
 	opacity: .4;
 }
  
 /* ICON POSITIONING */  
-ul.bean_social_icons li.bean_social_icon.bean_social-twitter {
+ul.bean_social_icons li.bean_social_icon.bean_social-twitter a {
 background-position: 0px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-facebook {
+ul.bean_social_icons li.bean_social_icon.bean_social-facebook a {
 background-position: -32px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-dribbble {
+ul.bean_social_icons li.bean_social_icon.bean_social-dribbble a {
 background-position: -64px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-mail {
+ul.bean_social_icons li.bean_social_icon.bean_social-mail a {
 background-position: -96px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-instagram {
+ul.bean_social_icons li.bean_social_icon.bean_social-instagram a {
 background-position: -128px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-pinterest {
+ul.bean_social_icons li.bean_social_icon.bean_social-pinterest a {
 background-position: -160px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-vimeo {
+ul.bean_social_icons li.bean_social_icon.bean_social-vimeo a {
 background-position: -192px 0px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-evernote {
+ul.bean_social_icons li.bean_social_icon.bean_social-evernote a {
 background-position: 0px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-myspace {
+ul.bean_social_icons li.bean_social_icon.bean_social-myspace a {
 background-position: -32px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-linkedin {
+ul.bean_social_icons li.bean_social_icon.bean_social-linkedin a {
 background-position: -64px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-forrest {
+ul.bean_social_icons li.bean_social_icon.bean_social-forrest a {
 background-position: -96px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-paypal {
+ul.bean_social_icons li.bean_social_icon.bean_social-paypal a {
 background-position: -128px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-googleplus {
+ul.bean_social_icons li.bean_social_icon.bean_social-googleplus a {
 background-position: -160px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-spotify {
+ul.bean_social_icons li.bean_social_icon.bean_social-spotify a {
 background-position: -192px -32px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-behance {
+ul.bean_social_icons li.bean_social_icon.bean_social-behance a {
 background-position: 0px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-rss {
+ul.bean_social_icons li.bean_social_icon.bean_social-rss a {
 background-position: -32px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-dropbox {
+ul.bean_social_icons li.bean_social_icon.bean_social-dropbox a {
 background-position: -64px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-soundcloud {
+ul.bean_social_icons li.bean_social_icon.bean_social-soundcloud a {
 background-position: -96px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-rdio {
+ul.bean_social_icons li.bean_social_icon.bean_social-rdio a {
 background-position: -128px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-deviantart {
+ul.bean_social_icons li.bean_social_icon.bean_social-deviantart a {
 background-position: -160px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-skype {
+ul.bean_social_icons li.bean_social_icon.bean_social-skype a {
 background-position: -192px -64px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-soundhound {
+ul.bean_social_icons li.bean_social_icon.bean_social-soundhound a {
 background-position: 0px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-zerply {
+ul.bean_social_icons li.bean_social_icon.bean_social-zerply a {
 background-position: -32px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-picasa {
+ul.bean_social_icons li.bean_social_icon.bean_social-picasa a {
 background-position: -64px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-500px {
+ul.bean_social_icons li.bean_social_icon.bean_social-500px a {
 background-position: -96px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-youtube {
+ul.bean_social_icons li.bean_social_icon.bean_social-youtube a {
 background-position: -128px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-steam {
+ul.bean_social_icons li.bean_social_icon.bean_social-steam a {
 background-position: -160px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-reddit {
+ul.bean_social_icons li.bean_social_icon.bean_social-reddit a {
 background-position: -192px -96px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-foodspotting {
+ul.bean_social_icons li.bean_social_icon.bean_social-foodspotting a {
 background-position: 0px -128px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-wordpress {
+ul.bean_social_icons li.bean_social_icon.bean_social-wordpress a {
 background-position: -32px -128px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-medium {
+ul.bean_social_icons li.bean_social_icon.bean_social-medium a {
 background-position: -64px -128px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-vine {
+ul.bean_social_icons li.bean_social_icon.bean_social-vine a {
 background-position: -96px -128px; }
-ul.bean_social_icons li.bean_social_icon.bean_social-github {
+ul.bean_social_icons li.bean_social_icon.bean_social-github  a {
 background-position: -128px -128px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-envato  a {
+background-position: -160px -128px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-tumblr  a {
+background-position: -192px -128px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-imdb a {
+background-position: 0px -160px; }
 
 /* RETINA CSS */  
-@media all and (-webkit-min-device-pixel-ratio: 1.5),
-(min-resolution: 192dpi) {	
-	ul.bean_social_icons li.bean_social_icon {
+@media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {	
+	ul.bean_social_icons li.bean_social_icon a {
 		background-image: url(../images/bean-social@2x.png); 
-		background-size: 224px 160px;
+		background-size: 224px 192px;
 	}
 }

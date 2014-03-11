@@ -3,7 +3,7 @@
  * Plugin Name: Bean Social
  * Plugin URI: http://themebeans.com/plugin/bean-social/?ref=plugin_bean_social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.4
+ * Version: 1.4.1
  * Author: Rich Tabor / ThemeBeans
  * Author URI: http://themebeans.com/?ref=plugin_bean_social
  *
@@ -59,7 +59,7 @@ function edd_beansocial_plugin_updater()
 	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
 
 	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
-			'version' 	=> '1.4',
+			'version' 	=> '1.4.1',
 			'license' 	=> $license_key,
 			'item_name' => EDD_BEANSOCIAL_NAME,
 			'author' 	=> 'Rich Tabor / ThemeBeans'
@@ -131,7 +131,10 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 		    "wordpress" => "WordPress",
 		    "medium" => "Medium",
 		    "vine" => "Vine",
-		    "github" => "Github"
+		    "github" => "Github",
+		    "envato" => "Envato",
+		    "tumblr" => "Tumblr",
+		    "imdb" => "IMDB", 
 		    );
 
 	    private $screen_id = null;
@@ -253,9 +256,10 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 	                }
 	            }
 
-	            $return_html_string .= "<a title='$social_service' href='" . $social_link . "'>" .
-	                                        "<li class='bean_social_icon bean_social-$social_service_slug'></li>" .
-	                                    "</a>";
+	            $return_html_string .= 
+				"<li class='bean_social_icon bean_social-$social_service_slug'>" .
+	           		"<a title='$social_service' href='" . $social_link . "'></a>" .
+	            "</li>";
 	        }
 
 	        $return_html_string .= '</ul>';
