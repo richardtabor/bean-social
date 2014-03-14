@@ -103,7 +103,7 @@ class Bean_Social_Widget extends WP_Widget
         // WIDGET DEFAULTS
         $defaults = array(
             'title' => 'We\'re Social',
-            'desc'  => __( 'Follow us across the internet.', 'bean' )
+            'desc'  => '',
         );
 
         $instance = wp_parse_args( (array) $instance, $defaults );

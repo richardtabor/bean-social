@@ -1,6 +1,7 @@
 MAR 11 2013 - Version 1.4.1
 <ul>
 <li>Added Envato, Tumblr & IMDB icons</li>
+<li>Added optional text desc field.</li>
 </ul>
 
 FEB 12 2013 - Version 1.4
