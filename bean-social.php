@@ -266,7 +266,7 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 	    /*===================================================================*/
 	    /*	OUTPUT SOCIAL ICONS
 	    /*===================================================================*/
-	    function draw_social_icons( $filter = null )
+	    static function draw_social_icons( $filter = null )
 	    {
 	        $return_html_string = "<ul class='bean_social_icons'>";
 
