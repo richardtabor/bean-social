@@ -64,7 +64,7 @@ For more information, check out the [plugin page](http://themebeans.com/plugin/b
 1. Go to the _WordPress Dashboard > Appearance > Widgets_ screen.
 2. Drag/drop the _Bean Social_ widget into any of the widget areas.
 
-## Using the Shortcode
+### Using the Shortcode
 Use the following shortcode in any of the post/page content box to display all the available social icons:
 
 ```
