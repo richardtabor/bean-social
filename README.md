@@ -1,6 +1,6 @@
 ## Bean Social
 
-[Bean Social](http://themebeans.com/plugin/bean-social-plugin/) is a WordPress plugin by [ThemeBeans](http://themebeans.com) that adds both a [shortcode](https://codex.wordpress.org/Shortcode) and a [widget](https://codex.wordpress.org/WordPress_Widgets) to the WordPress.
+[Bean Social](http://themebeans.com/plugin/bean-social-plugin/) is a WordPress plugin by [ThemeBeans](http://themebeans.com) that adds both a [shortcode](https://codex.wordpress.org/Shortcode) and a [widget](https://codex.wordpress.org/WordPress_Widgets) to the WordPress for displaying social profiles icons.
 
 The widget can display any combination of the 36 social icons linking to your social profiles on:
 
