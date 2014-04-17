@@ -33,8 +33,8 @@ class Bean_Social_Widget extends WP_Widget
 	{
 		parent::__construct(
 	 		'bean_social', // BASE ID
-			'Bean Social (ThemeBeans)', // NAME
-			array( 'description' => __( 'Display social media icons/links based on the Bean Social settings.', 'bean' ), )
+			'Bean Social', // NAME
+			array( 'description' => __( 'Add social media icons.', 'bean' ), )
 		);
 
 
