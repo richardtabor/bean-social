@@ -1,3 +1,8 @@
+JUNE 31 2013 - Version 1.4.2
+<ul>
+<li>Added Flickr icon</li>
+</ul>
+
 MAR 11 2013 - Version 1.4.1
 <ul>
 <li>Added Envato, Tumblr & IMDB icons</li>

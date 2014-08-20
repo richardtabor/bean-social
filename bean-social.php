@@ -3,8 +3,8 @@
  * Plugin Name: Bean Social
  * Plugin URI: http://themebeans.com/plugin/bean-social/?ref=plugin_bean_social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.4.1
- * Author: Rich Tabor / ThemeBeans
+ * Version: 1.4.2
+ * Author: ThemeBeans
  * Author URI: http://themebeans.com/?ref=plugin_bean_social
  *
  *
@@ -30,7 +30,7 @@ if ( !function_exists( 'add_action' ) ) {
 /*===================================================================*/
 
 $bean_plugin_features[ plugin_basename( __FILE__ ) ] = array(
-        "updates"       => true    // Whether to utilize plugin updates feature or not
+        "updates"       => false    // Whether to utilize plugin updates feature or not
     );
 
 
@@ -89,8 +89,8 @@ function edd_beansocial_plugin_updater()
 	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
 
 	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
-			'version' 	=> '1.4.1',
-			'license' 	=> $license_key,
+			'version' => '1.4.2',
+			'license' => $license_key,
 			'item_name' => EDD_BEANSOCIAL_NAME,
 			'author' 	=> 'Rich Tabor / ThemeBeans'
 		)
@@ -165,6 +165,7 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 		    "envato" => "Envato",
 		    "tumblr" => "Tumblr",
 		    "imdb" => "IMDB", 
+		    "flickr" => "Flickr", 
 		    );
 
 	    private $screen_id = null;

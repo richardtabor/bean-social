@@ -97,6 +97,8 @@ ul.bean_social_icons li.bean_social_icon.bean_social-tumblr  a {
 background-position: -192px -128px; }
 ul.bean_social_icons li.bean_social_icon.bean_social-imdb a {
 background-position: 0px -160px; }
+ul.bean_social_icons li.bean_social_icon.bean_social-flickr a {
+background-position: -32px -160px; }
 
 /* RETINA CSS */  
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {	
