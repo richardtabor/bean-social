@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name: Bean Social
- * Plugin URI: http://themebeans.com/plugin/bean-social/?ref=plugin_bean_social
+ * Plugin URI: http://themebeans.com/plugin/bean-social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.4.2
+ * Version: 1.5
  * Author: ThemeBeans
- * Author URI: http://themebeans.com/?ref=plugin_bean_social
+ * Author URI: http://themebeans.com
  *
  *
  * @package Bean Plugins
@@ -30,7 +30,7 @@ if ( !function_exists( 'add_action' ) ) {
 /*===================================================================*/
 
 $bean_plugin_features[ plugin_basename( __FILE__ ) ] = array(
-        "updates"       => false    // Whether to utilize plugin updates feature or not
+        "updates" => false    // Whether to utilize plugin updates feature or not
     );
 
 
@@ -89,7 +89,7 @@ function edd_beansocial_plugin_updater()
 	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
 
 	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
-			'version' => '1.4.2',
+			'version' => '1.5',
 			'license' => $license_key,
 			'item_name' => EDD_BEANSOCIAL_NAME,
 			'author' 	=> 'Rich Tabor / ThemeBeans'
@@ -97,6 +97,26 @@ function edd_beansocial_plugin_updater()
 	);
 }
 add_action( 'admin_init', 'edd_beansocial_plugin_updater' );
+
+
+/*===================================================================*/
+/* ADD SETTINGS LINK TO PLUGINS PAGE
+/*===================================================================*/
+define( 'BEANSOCIAL_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
+
+add_filter( 'plugin_action_links', 'beansocial_plugin_action_links', 10, 2 );
+
+function beansocial_plugin_action_links( $links, $file ) {
+	if ( $file != BEANSOCIAL_PLUGIN_BASENAME )
+		return $links;
+
+	$settings_link = '<a href="' . menu_page_url( 'bean-social', false ) . '">'
+		. esc_html( __( 'Settings', 'bean-social' ) ) . '</a>';
+
+	array_unshift( $links, $settings_link );
+
+	return $links;
+}
 
 
 /*===================================================================*/
@@ -221,7 +241,7 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 	    function admin_menu()
 	    {
 	    	add_options_page(
-	    		__('Bean Social', 'bean'), __('Bean Social', 'bean'), 'manage_options', 'bean_social', array(&$this, 'bean_social_admin_page')
+	    		__('Bean Social', 'bean'), __('Bean Social', 'bean'), 'manage_options', 'bean-social', array(&$this, 'bean_social_admin_page')
 	    	);
 	    }
 
@@ -231,24 +251,24 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 		/*===================================================================*/
 		/* ADD ACTION FOR ENQUEUING STYLESHEET IF THE SHORTCODE IS FOUND
 		/*===================================================================*/
-	    function add_style_if_shortcode_being_used($posts)
-	    {
-	        if (empty($posts)) return $posts;
+		function add_style_if_shortcode_being_used($posts)
+		{
+		   if (empty($posts)) return $posts;
 
-	        $shortcode_found = false;
-	        foreach ($posts as $post) {
-	            if (stripos($post->post_content, '[bean_social') !== false) {
-	                $shortcode_found = true;
-	                break;
-	            }
-	        }
+		   $shortcode_found = false;
+		   foreach ($posts as $post) {
+		       if (stripos($post->post_content, '[bean_social') !== false) {
+		           $shortcode_found = true;
+		           break;
+		       }
+		   }
 
-	        if ($shortcode_found) {
-	            wp_enqueue_style( 'bean-social-style', plugins_url( 'css/bean-social.css', __FILE__ ) );
-	        }
+		   if ($shortcode_found) {
+		       wp_enqueue_style( 'bean-social-style', plugins_url( 'css/bean-social.css', __FILE__ ) );
+		   }
 
-	        return $posts;
-	    }
+		   return $posts;
+		}
 
 
 

@@ -40,6 +40,7 @@ The widget can display any combination of the 36 social icons linking to your so
 - Envato
 - Tumblr
 - IMDB
+- Flikr
 
 
 Likewise, the shortcode can be used to display unique combinations of the icons of above-mentioned social services.

@@ -1,6 +1,6 @@
 <?php
 /**
- * Widget Name: Bean Social Widget
+ * Widget Name: Bean Social
  * Widget URI: http://themebeans.com
  * Description:  Display social media icons based on the Bean Social settings in your dashboard.
  * Author: ThemeBeans
