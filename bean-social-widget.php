@@ -13,52 +13,31 @@
  * @since BeanSocial 1.0
  */
 
-// REGISTER WIDGET
-function reg_bean_social()
+// Register widget
+add_action('widgets_init', create_function('', 'return register_widget("Bean_Social_Widget");'));
+
+class Bean_Social_Widget extends WP_Widget 
 {
-	register_widget('Bean_Social_Widget');
-}
-add_action('init', 'reg_bean_social', 1);
-
-// WIDGET CLASS
-class Bean_Social_Widget extends WP_Widget
-{
-
-
-
-	/*===================================================================*/
-	/*	WIDGET SETUP
-	/*===================================================================*/
-	public function __construct()
-	{
+	// Constructor
+	function __construct() {
 		parent::__construct(
-	 		'bean_social', // BASE ID
-			'Bean Social', // NAME
-			array( 'description' => __( 'Add social media icons.', 'bean' ), )
+			'bean_social', // Base ID
+			__( 'Bean Social', 'bean' ), // Name
+			array( 'description' => __( 'Display social media icons.', 'bean' ), ) // Args
 		);
 
-
-	    if ( is_active_widget(false, false, $this->id_base) )
+		if ( is_active_widget(false, false, $this->id_base) ) {
 	        add_action( 'wp_head', array(&$this, 'load_widget_style') );
+	     } 
 	}
 
-
-
-
-	/*===================================================================*/
-	/*	ENQUEUE WIDGET STYLE
-	/*===================================================================*/
+	// Enqueue
 	public function load_widget_style()
 	{
 	    wp_enqueue_style( 'bean-social-style', plugin_dir_url(__FILE__) . 'css/bean-social.css', false, '1.0', 'all' );
 	}
 
-
-
-
-	/*===================================================================*/
-	/*	DISPLAY WIDGET
-	/*===================================================================*/
+	// Display widget
 	public function widget($args, $instance)
 	{
 	    $title = apply_filters( 'widget_title', $instance['title'] );
@@ -70,17 +49,12 @@ class Bean_Social_Widget extends WP_Widget
 
         if($desc != '') : ?><p><?php echo $desc; ?></p><?php endif;
 
-	    echo Bean_Social::draw_social_icons();
+	    echo Bean_Social::draw_social_icons(); 
 
 	    echo $args['after_widget'];
 	}
 
-
-
-
-	/*===================================================================*/
-	/*	UPDATE WIDGET
-	/*===================================================================*/
+	// Update widget
 	public function update($new_instance, $old_instance)
 	{
 	    $instance = array();
@@ -93,16 +67,11 @@ class Bean_Social_Widget extends WP_Widget
 	}
 
 
-
-
-	/*===================================================================*/
-	/*	WIDGET SETTINGS (FRONT END PANEL)
-	/*===================================================================*/
+	// Widget settings
 	public function form($instance)
 	{
-        // WIDGET DEFAULTS
         $defaults = array(
-            'title' => 'We\'re Social',
+            'title' => '',
             'desc'  => '',
         );
 
@@ -124,6 +93,4 @@ class Bean_Social_Widget extends WP_Widget
 
 	    <?php
 	}
-
-} //END class Bean_Social_Widget
-?>
+}

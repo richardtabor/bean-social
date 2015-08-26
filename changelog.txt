@@ -1,3 +1,8 @@
+AUG 26 2015 - Version 1.6
+<ul>
+<li>WP 4.3 Compatibility</li>
+</ul>
+
 SEPT 11 2014 - Version 1.5
 <ul>
 <li>Performance Improvements</li>
