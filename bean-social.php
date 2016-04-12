@@ -309,7 +309,7 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 
 	            $return_html_string .= 
 				"<li class='bean_social_icon bean_social-$social_service_slug'>" .
-	           		"<a title='$social_service' href='" . $social_link . "'></a>" .
+	           		"<a target='blank' title='$social_service' href='" . $social_link . "'></a>" .
 	            "</li>";
 	        }
 
