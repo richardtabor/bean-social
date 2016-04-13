@@ -3,7 +3,7 @@
  * Plugin Name: Bean Social
  * Plugin URI: http://themebeans.com/plugin/bean-social
  * Description: Create and add social media icons with our widget and associated shortcodes.
- * Version: 1.6
+ * Version: 1.6.1
  * Author: ThemeBeans
  * Author URI: http://themebeans.com
  *

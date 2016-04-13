@@ -104,6 +104,6 @@ background-position: -32px -160px; }
 @media all and (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 192dpi) {	
 	ul.bean_social_icons li.bean_social_icon a {
 		background-image: url(../images/bean-social@2x.png); 
-		background-size: 224px 192px;
+		background-size: 224px 160px;
 	}
 }

@@ -1,3 +1,8 @@
+FEB 22 2016 - Version 1.6.1
+<ul>
+<li>Retina update</li>
+</ul>
+
 AUG 26 2015 - Version 1.6
 <ul>
 <li>WP 4.3 Compatibility</li>
