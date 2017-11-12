@@ -29,76 +29,6 @@ if ( !function_exists( 'add_action' ) ) {
 /*
 /*===================================================================*/
 
-$bean_plugin_features[ plugin_basename( __FILE__ ) ] = array(
-        "updates" => false    // Whether to utilize plugin updates feature or not
-    );
-
-
-if ( ! function_exists( 'bean_plugin_supports' ) ) {
-    function bean_plugin_supports( $plugin_basename, $feature ) {
-        global $bean_plugin_features;
-
-        $setup = $bean_plugin_features;
-
-        if( isset( $setup[$plugin_basename][$feature] ) && $setup[$plugin_basename][$feature] )
-            return true;
-        else
-            return false;
-    }
-}
-
-
-/*===================================================================*/
-/*
-/* PLUGIN UPDATER FUNCTIONALITY
-/*
-/*===================================================================*/
-define( 'EDD_BEANSOCIAL_TB_URL', 'http://themebeans.com' );
-define( 'EDD_BEANSOCIAL_NAME', 'Bean Social' );
-
-if ( bean_plugin_supports ( plugin_basename( __FILE__ ), 'updates' ) ) : // check to see if updates are allowed; only import if so
-
-//LOAD UPDATER CLASS
-if( !class_exists( 'EDD_SL_Plugin_Updater' ) ) 
-{
-	include( dirname( __FILE__ ) . '/updates/EDD_SL_Plugin_Updater.php' );
-}
-//INCLUDE UPDATER SETUP
-include( dirname( __FILE__ ) . '/updates/EDD_SL_Activation.php' );
-
-
-endif; // END if ( bean_plugin_supports ( plugin_basename( __FILE__ ), 'updates' ) )
-
-
-/*===================================================================*/
-/* UPDATER SETUP
-/*===================================================================*/
-function beansocial_license_setup() 
-{
-	add_option( 'edd_beansocial_activate_license', 'BEANSOCIAL' );
-	add_option( 'edd_beansocial_license_status' );
-}
-add_action( 'init', 'beansocial_license_setup' );
-
-function edd_beansocial_plugin_updater() 
-{
-    // check to see if updates are allowed; don't do anything if not
-    if ( ! bean_plugin_supports ( plugin_basename( __FILE__ ), 'updates' ) ) return;
-    
-	//RETRIEVE LICENSE KEY
-	$license_key = trim( get_option( 'edd_beansocial_activate_license' ) );
-
-	$edd_updater = new EDD_SL_Plugin_Updater( EDD_BEANSOCIAL_TB_URL, __FILE__, array( 
-			'version' => '1.5',
-			'license' => $license_key,
-			'item_name' => EDD_BEANSOCIAL_NAME,
-			'author' 	=> 'Rich Tabor / ThemeBeans'
-		)
-	);
-}
-add_action( 'admin_init', 'edd_beansocial_plugin_updater' );
-
-
 /*===================================================================*/
 /* ADD SETTINGS LINK TO PLUGINS PAGE
 /*===================================================================*/
@@ -122,7 +52,7 @@ function beansocial_plugin_action_links( $links, $file ) {
 /*===================================================================*/
 /* DEACTIVATION HOOK - REMOVE OPTION
 /*===================================================================*/
-function beansocial_deactivate() 
+function beansocial_deactivate()
 {
 	delete_option( 'edd_beansocial_activate_license' );
 	delete_option( 'edd_beansocial_license_status' );
@@ -184,8 +114,8 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 		    "github" => "Github",
 		    "envato" => "Envato",
 		    "tumblr" => "Tumblr",
-		    "imdb" => "IMDB", 
-		    "flickr" => "Flickr", 
+		    "imdb" => "IMDB",
+		    "flickr" => "Flickr",
 		    );
 
 	    private $screen_id = null;
@@ -307,7 +237,7 @@ if ( ! class_exists( 'Bean_Social' ) ) :
 	                }
 	            }
 
-	            $return_html_string .= 
+	            $return_html_string .=
 				"<li class='bean_social_icon bean_social-$social_service_slug'>" .
 	           		"<a target='blank' title='$social_service' href='" . $social_link . "'></a>" .
 	            "</li>";
